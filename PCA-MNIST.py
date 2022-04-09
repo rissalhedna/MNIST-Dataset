@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from scipy.linalg import eigh
 
 df = pd.read_csv('train.csv', nrows = 20000)
 print("the shape of data is :", df.shape)
@@ -18,6 +18,7 @@ plt.imshow(grid_data, interpolation = None, cmap = 'gray')
 print(label[ind])
 
 from sklearn.preprocessing import StandardScaler
+
 scaler = StandardScaler()
 std_df = scaler.fit_transform(df)
 print(std_df.shape)
@@ -25,7 +26,6 @@ print(std_df.shape)
 covar_mat = np.matmul(std_df.T, std_df)
 print(covar_mat.shape)
 
-from scipy.linalg import eigh
 values, vectors = eigh(covar_mat, eigvals = (782, 783))
 print("Dimensions of Eigen vector:", vectors.shape)
 vectors = vectors.T
@@ -40,6 +40,3 @@ print(dataFrame)
 
 sns.FacetGrid(dataFrame, hue = 'label', height = 8).map(sns.scatterplot, 'pca_1', 'pca_2').add_legend()
 plt.show()
-
-#average of each digit in the dataset:
-] 

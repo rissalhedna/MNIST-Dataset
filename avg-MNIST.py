@@ -21,25 +21,9 @@ mean_images = [to_image(1- mtr.repeat(3, 1, 1)) for mtr in mean_tensors]
 
 for i in range(10):
     mean_images[i].show()
-    
-print(testing_tensors[0].shape, mean_tensors[0].shape)
+    std = torch.std(training_tensors[i])
+    mean = torch.mean(training_tensors[i])
+    print("Mean",i,":", mean)
+    print("Standard deviation:",i,":",std)
 
-correct = []
-total = []
-
-for i in range(10):
-  total.append(testing_tensors[i].shape[0])
-  preds = torch.Tensor([
-          torch.stack(
-              [
-                F.mse_loss(testing_tensors[i][imgidx], mean_tensors[midx]).sqrt()
-                for midx in range(10)
-              ]
-            ).argmin()
-            for imgidx in range(testing_tensors[i].shape[0])
-        ])
-
-  correct.append((preds == i).sum())
-
-print(correct, total)
 
