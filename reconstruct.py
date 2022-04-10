@@ -7,7 +7,7 @@ import seaborn as sns
 import torch
 
 #First part, specific to MNIST dataset:
-df = pd.read_csv('train.csv', nrows = 20000)
+df = pd.read_csv('csv MNIST Dataset/train.csv', nrows = 20000)
 df.head()
 label = df['label']
 df.drop('label', axis = 1, inplace = True)

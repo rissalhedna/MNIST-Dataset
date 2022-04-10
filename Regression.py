@@ -14,7 +14,7 @@ print(theta_best_values)
 predict_value = x_new.dot(theta_best_values)
 
 plt.scatter(x,y,s=30,marker='o')
-plt.plot(x_new,predict_value,c='green')
+plt.plot(x,predict_value,c='green')
 plt.xlabel("Feature_1")
 plt.ylabel("Target_Variable")
 plt.title('Simple Linear Regression')
