@@ -3,13 +3,14 @@
 ## Introduction
 
 This analysis was part of a graduate level machine learning course at Kent State University. The main goal of the project was to analyse the MNIST dataset and perform PCA and visualize the different principal components and the amount of information they each contain.
-Additionally, principle components were used to train a machine learning model that was used to classify the hand-written images into digits ranging from 0-9.
+Additionally, we trained a neural network that was used to classify the hand-written images into digits ranging from 0-9.
 
 ## Tools and methods used
 
 The tools that were used during this project are:
 1. Python libraries such as Tensorflow, Keras, Pandas, Matplotlib...
-2. Machine learning techniques such as SVM classifier and Principle Component Analysis.
+2. Principle component analysis
+3. Convolutional Neural Networks
 
 ## Findings
 
